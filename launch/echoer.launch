@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="n_echos" default="5"/>
+
+    <!--run echoer node with chosen parameter-->
+    <node name="echoer" pkg="roscpp_example" type="echoer" output="screen">
+        <param name="n_echos" value="$(arg n_echos)"/>
+    </node>
+
+</launch>
