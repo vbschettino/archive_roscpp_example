@@ -16,7 +16,7 @@ public:
 
     //Subscribers
     void listenROS(const std_msgs::String::ConstPtr &rosmsg){ //wrapper callback around base function
-        string msg = rosmsg->data;
+        std::string msg = rosmsg->data;
         listen(msg);
         makeEcho();
         ROS_INFO("%s%s", "I heard: ", msg.data());
@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
     //Start node
     ros::init(argc, argv, "echoer");
     ros::NodeHandle nh; //public node handle
-    ros::NodeHandle pnh("~"); //private node handle, adds nodes name to namespace
+    ros::NodeHandle pnh("~"); //private node handle, adds node's name to namespace
 
     //Get parameters from ROS parameter server
     int nEchos;

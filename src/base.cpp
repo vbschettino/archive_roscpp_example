@@ -5,24 +5,24 @@
 #include "roscpp_example/base.h"
 
 // Constructor
-Echoer::Echoer(int n, string in, string out) : nEchos(n), inMsg(in), outMsg(out) {}
+Echoer::Echoer(int n, std::string in, std::string out) : nEchos(n), inMsg(in), outMsg(out) {}
 
 // Setters and getters
 void Echoer::setNEchos(int n) {
     Echoer::nEchos = n;
 }
 
-void Echoer::listen(const string &msg) {
+void Echoer::listen(const std::string &msg) {
     Echoer::inMsg = msg;
 }
 
-string Echoer::shout() {
+std::string Echoer::shout() {
     return Echoer::outMsg;
 }
 
 // Actual work
 void Echoer::makeEcho() {
-    stringstream ss;
+    std::stringstream ss;
     for (int i = 0; i < Echoer::nEchos; ++i) {
         ss << Echoer::inMsg << "...";
     }

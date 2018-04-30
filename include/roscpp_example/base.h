@@ -8,19 +8,17 @@
 #include <string>
 #include <sstream>
 
-using namespace std;
-
 class Echoer {
 protected:
     int nEchos;
-    string inMsg;
-    string outMsg;
+    std::string inMsg;
+    std::string outMsg;
 
 public:
-    explicit Echoer(int n = 3, string in = "...", string out = "...");
+    explicit Echoer(int n = 3, std::string in = "...", std::string out = "...");
     void setNEchos(int n);
-    void listen(const string &msg);
-    string shout();
+    void listen(const std::string &msg);
+    std::string shout();
     void makeEcho();
 };
 
